@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+  </head>
+  <body>
+    <div id="bg">
+      <div id="content">
+        <h1>RECOMMENDED</h1>
+        <h2>Recipes</h2>
+        <div id="flex-container"></div>
+        <script>
+          const images = [
+            "./food/1.jfif",
+            "./food/2.jfif",
+            "./food/3.jfif",
+            "./food/4.jfif",
+            "./food/5.jfif",
+            "./food/6.jfif",
+            "./food/7.jfif",
+          ];
+          const name = [
+            "Corndog",
+            "TWICE BAKED BREAKFAST POTATOES",
+            "Sushi",
+            "Pancake",
+            "Spicy Cheese Maggi Noodles",
+            "Ramen",
+            "Strawberry sandwich",
+          ];
+          const detail = [
+            "20 mins | 4 servirgs",
+            "25 mins | 4 servirgs",
+            "10 mins | 2 servirgs",
+            "20 mins | 4 servirgs",
+            "25 mins | 4 servirgs",
+            "10 mins | 2 servirgs",
+            "20 mins | 4 servirgs",
+          ];
+
+          const contentDiv = document.getElementById("flex-container");
+
+          images.forEach((image, index) => {
+            const div = document.createElement("div");
+            div.id = "menu";
+            div.style.background = `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%), url(${image})`;
+            div.style.backgroundSize = "160px 200px";
+            contentDiv.appendChild(div);
+
+            const divtext = document.createElement("div");
+            divtext.id = "textfood";
+            div.appendChild(divtext);
+
+            const text = document.createElement("p");
+            text.id = "namefood";
+            text.textContent = name[index];
+            divtext.appendChild(text);
+
+            const detailfood = document.createElement("p");
+            detailfood.id = "detailfood";
+            detailfood.textContent = detail[index];
+            divtext.appendChild(detailfood);
+          });
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
